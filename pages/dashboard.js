@@ -1,4 +1,4 @@
-import LearnCard from '@/components/LearnCard';
+import LearnCard from '../components/LearnCard';
 import { useState } from 'react';
 
 export default function Dashboard({ lang }) {
