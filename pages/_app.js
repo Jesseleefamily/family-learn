@@ -9,7 +9,7 @@ export default function App({ Component, pageProps }) {
         <button onClick={() => setLang('zh')} className="mr-2">中文</button>
         <button onClick={() => setLang('en')}>English</button>
       </div>
-      <Component {...pageProps} lang={lang} />
+      <Component {...pageProps} lang={lang} setLang={setLang} />
     </div>
   );
 }
