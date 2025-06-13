@@ -1,1 +1,0 @@
-document.getElementById('root').innerText = '🎓 Family Learn 已上线！';
