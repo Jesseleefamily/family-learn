@@ -1,8 +1,10 @@
 import '../styles/globals.css';
 import { useState } from 'react';
+import type { AppProps } from 'next/app';
 
-export default function App({ Component, pageProps }) {
-  const [lang, setLang] = useState('zh');
+export default function App({ Component, pageProps }: AppProps) {
+  const [lang, setLang] = useState<'zh' | 'en'>('zh');
+
   return (
     <div>
       <div className="flex justify-end p-2">

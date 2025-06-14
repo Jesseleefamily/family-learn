@@ -1,13 +1,25 @@
 import { useState } from 'react';
 
-export default function LearnCard({ task }) {
-  const [done, setDone] = useState(task.status);
-  const [image, setImage] = useState(null);
+interface Task {
+  id: number;
+  title: string;
+  status: boolean;
+}
 
-  function upload(e) {
-    const file = e.target.files[0];
-    setImage(URL.createObjectURL(file));
-    setDone(true); // 上传即算完成
+interface LearnCardProps {
+  task: Task;
+}
+
+export default function LearnCard({ task }: LearnCardProps) {
+  const [done, setDone] = useState<boolean>(task.status);
+  const [image, setImage] = useState<string | null>(null);
+
+  function upload(e: React.ChangeEvent<HTMLInputElement>) {
+    const file = e.target.files?.[0];
+    if (file) {
+      setImage(URL.createObjectURL(file));
+      setDone(true);
+    }
   }
 
   return (
