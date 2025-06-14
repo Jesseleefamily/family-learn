@@ -3,12 +3,12 @@ import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBe5vBCGrFptg1mm_QJyB41F0t5XtmIHBT",
-  authDomain: "family-learn.firebaseapp.com",
-  projectId: "family-learn",
-  storageBucket: "family-learn.appspot.com",
-  messagingSenderId: "901799403433",
-  appId: "1:901799403433:web:5524c7aba0c162aff09660"
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY!,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN!,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID!,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET!,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID!,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID!
 };
 
 const app = initializeApp(firebaseConfig);
